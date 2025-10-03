@@ -1,0 +1,7 @@
+digraph G {
+  rankdir = "RL";
+  node [shape = rect, fontname = "sans-serif"];
+  "aws_instance.main" [label="aws_instance.main"];
+  "aws_security_group.sg" [label="aws_security_group.sg"];
+  "aws_instance.main" -> "aws_security_group.sg";
+}
