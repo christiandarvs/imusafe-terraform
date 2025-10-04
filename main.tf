@@ -50,3 +50,14 @@ resource "aws_security_group" "sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+resource "aws_eip" "main" {
+  tags = {
+    Name = "ImuSafe EIP"
+  }
+}
+
+resource "aws_eip_association" "main" {
+  instance_id   = aws_instance.main.id
+  allocation_id = aws_eip.main.id
+}
